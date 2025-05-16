@@ -12,6 +12,9 @@ public class Retangulo extends FormaGeometrica{
         this.comprimento = comprimento;
     }
 
+    public Retangulo(){
+    }
+
     public double getAltura() {
         return altura;
     }

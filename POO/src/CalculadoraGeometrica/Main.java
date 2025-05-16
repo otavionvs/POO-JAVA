@@ -56,6 +56,43 @@ public class Main {
 
                     break;
                 }
+                case 2: {
+                    Retangulo retangulo = new Retangulo();
+                    System.out.println("Qual a cor do retangulo: ");
+                    retangulo.setCor(sc.next());
+                    System.out.println("Qual a largura do retangulo: ");
+                    retangulo.setLargura(sc.nextDouble());
+                    System.out.println("Qual a altura do retangulo: ");
+                    retangulo.setAltura(sc.nextDouble());
+                    System.out.println("Qual o comprimento do retangulo: ");
+                    retangulo.setComprimento(sc.nextDouble());
+
+                    int opcao2;
+                    do {
+                        opcao2 = menuCalculo();
+
+                        if (opcao2 < 0 || opcao2 > 3) {
+                            System.out.println("Opção Invalida!");
+                        }
+
+                        switch (opcao2) {
+                            case 1: {
+                                System.out.println("Perimetro: " + retangulo.calculaPerimetro());
+                                break;
+                            }
+                            case 2: {
+                                System.out.println("Area: " + retangulo.calculaArea());
+                                break;
+                            }
+                            case 3: {
+                                System.out.println("Volume: " + retangulo.calculaVolume());
+                                break;
+                            }
+                        }
+                    } while (opcao2 != 0);
+
+                    break;
+                }
             }
         }while (opcao != 0);
     }

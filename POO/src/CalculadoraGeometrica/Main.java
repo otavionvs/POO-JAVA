@@ -17,78 +17,48 @@ public class Main {
                             "2. Retângulo\n");
             opcao = sc.nextInt();
 
+            FormaGeometrica forma;
+
             switch (opcao) {
                 case 0: {
                     System.out.println("Obrigado por usar o Sistema de Calculadora!");
                     break;
                 }
+
                 case 1: {
                     System.out.println("Digite a cor do quadrado: ");
                     String cor = sc.next();
                     System.out.println("Digite o lado do quadrado: ");
                     double lado = sc.nextDouble();
 
-                    Quadrado quadrado = new Quadrado(cor, lado);
+                    forma = new Quadrado(cor, lado);
 
                     int opcao2;
                     do {
                         opcao2 = menuCalculo();
 
-                        if (opcao2 < 0 || opcao2 > 3) {
-                            System.out.println("Opção Invalida!");
-                        }
-
-                        switch (opcao2) {
-                            case 1: {
-                                System.out.println("Perimetro: " + quadrado.calculaPerimetro());
-                                break;
-                            }
-                            case 2: {
-                                System.out.println("Area: " + quadrado.calculaArea());
-                                break;
-                            }
-                            case 3: {
-                                System.out.println("Volume: " + quadrado.calculaVolume());
-                                break;
-                            }
-                        }
+                        retornoCalculos(opcao2, forma);
                     } while (opcao2 != 0);
 
                     break;
                 }
                 case 2: {
-                    Retangulo retangulo = new Retangulo();
                     System.out.println("Qual a cor do retangulo: ");
-                    retangulo.setCor(sc.next());
+                    String cor = sc.next();
                     System.out.println("Qual a largura do retangulo: ");
-                    retangulo.setLargura(sc.nextDouble());
+                    double largura = sc.nextDouble();
                     System.out.println("Qual a altura do retangulo: ");
-                    retangulo.setAltura(sc.nextDouble());
+                    double altura = sc.nextDouble();
                     System.out.println("Qual o comprimento do retangulo: ");
-                    retangulo.setComprimento(sc.nextDouble());
+                    double comprimento = sc.nextDouble();
+
+                    forma = new Retangulo(cor, largura, altura, comprimento);
 
                     int opcao2;
                     do {
                         opcao2 = menuCalculo();
 
-                        if (opcao2 < 0 || opcao2 > 3) {
-                            System.out.println("Opção Invalida!");
-                        }
-
-                        switch (opcao2) {
-                            case 1: {
-                                System.out.println("Perimetro: " + retangulo.calculaPerimetro());
-                                break;
-                            }
-                            case 2: {
-                                System.out.println("Area: " + retangulo.calculaArea());
-                                break;
-                            }
-                            case 3: {
-                                System.out.println("Volume: " + retangulo.calculaVolume());
-                                break;
-                            }
-                        }
+                        retornoCalculos(opcao2, forma);
                     } while (opcao2 != 0);
 
                     break;
@@ -105,5 +75,26 @@ public class Main {
                 + "2. Area\n"
                 + "3. Volume\n");
         return sc.nextInt();
+    }
+
+    static public void retornoCalculos(int opcao, FormaGeometrica forma) {
+        if (opcao < 0 || opcao > 3) {
+            System.out.println("Opção Invalida!");
+        }
+
+        switch (opcao) {
+            case 1: {
+                System.out.println("Perimetro: " + forma.calculaPerimetro());
+                break;
+            }
+            case 2: {
+                System.out.println("Area: " + forma.calculaArea());
+                break;
+            }
+            case 3: {
+                System.out.println("Volume: " + forma.calculaVolume());
+                break;
+            }
+        }
     }
 }

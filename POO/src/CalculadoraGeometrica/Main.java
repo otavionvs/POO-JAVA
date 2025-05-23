@@ -2,10 +2,11 @@ package CalculadoraGeometrica;
 
 import java.util.Scanner;
 
-public class Main {
+//Comando para identação Ctrl+Alt+L
+public class Main { //Classe (documento de java)
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Função
         int opcao;
         do {
             System.out.println("Bem vindo ao Sistema de Calculadora de Formas Geometricas");
@@ -64,10 +65,10 @@ public class Main {
                     break;
                 }
             }
-        }while (opcao != 0);
+        } while (opcao != 0);
     }
 
-    static public int menuCalculo(){
+    static public int menuCalculo() { //Função (Metodo)
         System.out.println("Qual calculo deseja fazer?");
         System.out.println("Opções: \n"
                 + "0. Voltar \n"
@@ -77,10 +78,13 @@ public class Main {
         return sc.nextInt();
     }
 
+    //Função
     static public void retornoCalculos(int opcao, FormaGeometrica forma) {
         if (opcao < 0 || opcao > 3) {
             System.out.println("Opção Invalida!");
         }
+
+        
 
         switch (opcao) {
             case 1: {

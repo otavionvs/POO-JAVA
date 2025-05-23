@@ -4,7 +4,7 @@ public class Quadrado extends FormaGeometrica{
     private double lado;
 
     public Quadrado(String cor, double lado){
-        super(cor);
+        super(cor); // Construtor da classe pai (forma geometrica)
         this.lado = lado;
     }
 
@@ -30,4 +30,6 @@ public class Quadrado extends FormaGeometrica{
     public double calculaVolume() {
         return Math.pow(this.lado, 3); // lado^3
     }
+
+
 }

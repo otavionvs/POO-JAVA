@@ -1,6 +1,6 @@
 package CalculadoraGeometrica;
 
-public class FormaGeometrica {
+public abstract class FormaGeometrica {
     private String cor;
 
     public FormaGeometrica(String cor) {
@@ -10,20 +10,11 @@ public class FormaGeometrica {
 
     }
 
-    public double calculaPerimetro() {
-        System.out.println("Não implementado!");
-        return 0.0;
-    }
+    public abstract double calculaPerimetro();
 
-    public double calculaArea() {
-        System.out.println("Não implementado!");
-        return 0.0;
-    }
+    public abstract double calculaArea();
 
-    public double calculaVolume() {
-        System.out.println("Não implementado!");
-        return 0.0;
-    }
+    public abstract double calculaVolume();
 
     public String getCor() {
         return cor;
